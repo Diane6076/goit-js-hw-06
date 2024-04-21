@@ -1,4 +1,4 @@
-body {
+ body {
     font-family: Arial, sans-serif;
     margin: 20px;
   }
@@ -27,7 +27,7 @@ body {
   }
   
   button {
-    background-color: #4caf50;
+    background-color: #f055a5;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -36,14 +36,14 @@ body {
   }
   
   button:hover {
-    background-color: #45a049;
+    background-color: #f334e3;
   }
   
   #successMessage {
-    color: #4caf50;
+    color: #f91c8e;
     margin-top: 10px;
   }
   
   .hidden {
     display: none;
-  }
+  } 

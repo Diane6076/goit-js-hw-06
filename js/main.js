@@ -1,29 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
     const feedbackForm = document.getElementById('feedbackForm');
-    const successMessage = document.getElementById('successMessage');
+    const successmessage = document.getElementById('successmessage');
   
     feedbackForm.addEventListener('submit', async (event) => {
       event.preventDefault();
   
-      // Отримання даних з форми
       const formData = new FormData(feedbackForm);
       const formDataObject = {};
       formData.forEach((value, key) => {
         formDataObject[key] = value;
       });
   
-      // Відправка даних на сервер (модуль, який буде створений)
       const response = await sendDataToServer(formDataObject);
-  
-      // Показ повідомлення про успіх
+
       if (response.success) {
         feedbackForm.reset();
-        successMessage.classList.remove('hidden');
+        successmessage.classList.remove('hidden');
       }
     });
   });
-  
-  // Модуль, який буде створений для зберігання даних та відправки на сервер
   async function sendDataToServer(data) {
     try {
       const response = await fetch('/submit-feedback', {
@@ -40,21 +35,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-
-
   document.addEventListener('DOMContentLoaded', () => {
-    // ...
+
     feedbackForm.addEventListener('submit', async (event) => {
       event.preventDefault();
-      // ...
-  
-      // Показ повідомлення про успіх
+
       if (response.success) {
         feedbackForm.reset();
-        successMessage.classList.remove('hidden');
+        successmessage.classList.remove('hidden');
         setTimeout(() => {
-          successMessage.classList.add('hidden');
-        }, 5000); // Приховати повідомлення через 5 секунд
+          successmessage.classList.add('hidden');
+        }, 5000); 
       }
     });
   });
+
+//   document.getElementById('feedbackform').addEventListener('submit', function(event) {
+//     event.preventDefault(); // Prevent default form submission
+
+
+//     document.getElementById('successmessage').style.display = 'block';
+// });
+
+// let formData = {};
+
+// function setFormData(name, value) {
+//     formData[name] = value;
+// }
+
+// export { formData, setFormData };
